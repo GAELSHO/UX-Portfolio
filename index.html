@@ -42,14 +42,10 @@
       position: relative;
       width: 100vw; height: 100vh;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse 80% 65% at 62% -5%, #1a55e0 0%, transparent 55%),
-        radial-gradient(ellipse 45% 45% at 100% 2%, #90c5ff 0%, transparent 42%),
-        radial-gradient(ellipse 55% 65% at -8% 52%, #3730a3 0%, transparent 52%),
-        radial-gradient(ellipse 55% 55% at 4% 100%, #db2777 0%, transparent 52%),
-        radial-gradient(ellipse 65% 45% at 55% 78%, #fce7f3 0%, transparent 42%),
-        radial-gradient(ellipse 55% 50% at 100% 96%, #f97316 0%, transparent 48%),
-        #03061a;
+      background-image: url("assets/wallpaper/Color Mode=Light.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     /* ─── TOP BAR ──────────────────────────────────────────────── */
@@ -128,14 +124,15 @@
       font-family: 'Poppins', sans-serif;
       font-size: 88px; font-weight: 700; letter-spacing: -3px; line-height: 1.0;
       color: #ffffff;
-      text-shadow: 0 2px 60px rgba(0,0,0,.18);
+      text-shadow: 0 2px 30px rgba(0,0,0,.25), 0 8px 60px rgba(0,0,0,.15);
     }
     .dh-bio {
       font-family: 'Poppins', sans-serif;
-      font-size: 15px; font-weight: 300;
-      color: rgba(255,255,255,.78);
+      font-size: 16px; font-weight: 300;
+      color: rgba(255,255,255,.88);
       margin-top: 14px;
       letter-spacing: .01em;
+      text-shadow: 0 1px 16px rgba(0,0,0,.3);
     }
 
     /* ─── WINDOWS ──────────────────────────────────────────────── */
@@ -573,14 +570,20 @@
     }
 
     .dicon {
-      width: 52px; height: 52px; border-radius: 13px;
+      width: 56px; height: 56px;
       display: flex; align-items: center; justify-content: center;
       font-size: 26px; cursor: pointer;
       transition: transform .22s cubic-bezier(.34,1.56,.64,1);
       position: relative; flex-shrink: 0;
     }
-    .dicon:hover { transform: scale(1.45) translateY(-10px); }
-    .dicon:active { transform: scale(1.2) translateY(-5px); }
+    .dicon:hover { transform: scale(1.42) translateY(-10px); }
+    .dicon:active { transform: scale(1.18) translateY(-5px); }
+    .dicon-img {
+      width: 56px; height: 56px;
+      object-fit: contain;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,.35));
+    }
 
     .dlabel {
       position: absolute; bottom: calc(100% + 10px); left: 50%;
@@ -1418,12 +1421,12 @@
   <div id="dock">
     <div class="dicon" id="di-about" onclick="openW('about')">
       <div class="dlabel">About Me</div>
-      ⚙️
+      <img class="dicon-img" src="assets/icons/About me icon" alt="About Me">
       <div class="ddot"></div>
     </div>
     <div class="dicon" id="di-projects" onclick="openW('projects')">
       <div class="dlabel">Projects</div>
-      📁
+      <img class="dicon-img" src="assets/icons/projects icon" alt="Projects">
       <div class="ddot"></div>
     </div>
     <div class="dicon" id="di-resume" onclick="openW('resume')">
@@ -1433,7 +1436,7 @@
     </div>
     <div class="dicon" id="di-contact" onclick="openW('contact')">
       <div class="dlabel">Contact</div>
-      ✉️
+      <img class="dicon-img" src="assets/icons/Contact icon" alt="Contact">
       <div class="ddot"></div>
     </div>
     <div class="dsep"></div>
